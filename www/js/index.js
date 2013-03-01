@@ -26,7 +26,7 @@ var app = {
     deviceready: function() {
         // This is an event handler function, which means the scope is the event.
         // So, we must explicitly called `app.report()` instead of `this.report()`.
-        app.report('deviceready');
+        otmobile.report('ot-loading');
     },
     report: function(id) {
         // Report the event in the console
@@ -35,8 +35,15 @@ var app = {
         // Toggle the state from "pending" to "complete" for the reported ID.
         // Accomplished by adding .hide to the pending element and removing
         // .hide from the complete element.
-        document.querySelector('#' + id + ' .pending').className += ' hide';
-        var completeElem = document.querySelector('#' + id + ' .complete');
+
+        // find me the id with input parameter (ot-loading) and add a 'hide' class to it
+        document.querySelector('#' + id).className += ' hide';
+        
+        // find me the ot-ready id element
+        var completeElem = document.querySelector('#ot-ready');
+        // and remove the 'hide' class from it
         completeElem.className = completeElem.className.split('hide').join('');
-    }
+	    
+
+}
 };
