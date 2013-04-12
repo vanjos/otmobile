@@ -43,6 +43,7 @@ var app = {
         var completeElem = document.querySelector('#ot-ready');
         // and remove the 'hide' class from it
         completeElem.className = completeElem.className.split('hide').join('');
+        window.plugins.childBrowser.showWebPage("http://www.google.com", { showLocationBar: true });
 
     },
     buildpage: function(){
